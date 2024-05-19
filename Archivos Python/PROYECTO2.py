@@ -50,42 +50,26 @@ def convertir_fi(fila):
         case 8:
             return 0
 
-# Ingresar color de la torre
-color_torre = input("Ingrese el color de la torre: ").lower()
-
-# Ingresar la columna de la torre
-colTorre = input("Ingrese la columna de la torre: ").lower()
-
-# Convertir la columna de letra a posición dentro de la matriz
-ct = convertir_columna(colTorre)
-
-# Ingresar la fila de la torre
-filaTorre = int(input("Ingrese la fila de la torre: "))
-
-# Convertir la fila ingresada a posición dentro de la matriz 
-ft = convertir_fi(filaTorre)
-
-# Insertar la Torre al tablero
-Tablero[ft][ct] = ["Torre", color_torre]
-
-print(f"\n Nombre de pieza: {Tablero[ft][ct][0]}, color {Tablero[ft][ct][1]}")
-
-# Imprimir matriz
-for filaTablero in Tablero:
-    print(filaTablero)
-
-# Ingreso de más piezas al tablero
+# Ingreso de piezas al tablero
 while True:
     nombre_pieza = input("Ingrese el nombre de la pieza (o escriba fin para terminar): ")
     if nombre_pieza == 'fin':
         break
     color = input("Ingrese el color de la pieza: ").lower()
-    col_pieza = input("Ingrese la columna de la pieza: ").lower()
-    fila_pieza = int(input("Ingrese la fila de la pieza: "))
+    
+    while True:
+        col_pieza = input("Ingrese la columna de la pieza: ").lower()
+        fila_pieza = int(input("Ingrese la fila de la pieza: "))
 
-    # Convertir columna y fila de la pieza a una posición dentro de la matriz
-    cp = convertir_columna(col_pieza)
-    fp = convertir_fi(fila_pieza)
+        # Convertir columna y fila de la pieza a una posición dentro de la matriz
+        cp = convertir_columna(col_pieza)
+        fp = convertir_fi(fila_pieza)
+
+        # Verificar si la casilla está ocupada
+        if Tablero[fp][cp][0] == "v":
+            break
+        else:
+            print("La casilla ya está ocupada. Por favor, ingrese una nueva posición.")
 
     # Insertar la pieza en el tablero
     Tablero[fp][cp] = [nombre_pieza, color]
@@ -95,6 +79,36 @@ while True:
     # Imprimir matriz
     for filaTablero in Tablero:
         print(filaTablero)
+
+color_torre = input("Ingrese el color de la torre: ").lower()
+
+while True:
+    # Ingresar la columna de la torre
+    colTorre = input("Ingrese la columna de la torre: ").lower()
+
+    # Convertir la columna de letra a posición dentro de la matriz
+    ct = convertir_columna(colTorre)
+
+    # Ingresar la fila de la torre
+    filaTorre = int(input("Ingrese la fila de la torre: "))
+
+    # Convertir la fila ingresada a posición dentro de la matriz 
+    ft = convertir_fi(filaTorre)
+
+    # Verificar si la casilla está ocupada
+    if Tablero[ft][ct][0] == "v":
+        break
+    else:
+        print("La casilla ya está ocupada. Por favor, ingrese una nueva posición.")
+
+# Insertar la Torre al tablero
+Tablero[ft][ct] = ["Torre", color_torre]
+
+print(f"\n Nombre de pieza: {Tablero[ft][ct][0]}, color {Tablero[ft][ct][1]}")
+
+# Imprimir matriz
+for filaTablero in Tablero:
+    print(filaTablero)
 
 # Movimientos a la derecha
 colDerechaInicial = ct + 1

@@ -1,4 +1,4 @@
-print("\n \t\t\t\t\t\t\t Bienvenido \n\t\t\t\t\t\t Juan Esteban Kreitz Caravantes \n\t\t\t\t\t\t 1198024 \n\t\t\t\t\t\t\t PROYECTO 2")
+print(" Bienvenido \n Juan Esteban Kreitz Caravantes \n 1198024 \n PROYECTO 2")
 
 # Matriz del Tablero
 Tablero = [[["v"], ["v"], ["v"], ["v"], ["v"], ["v"], ["v"], ["v"]],
@@ -143,7 +143,7 @@ else:
                     n = 'g'
                 case 7:
                     n = 'h'
-            print(f"Posición: {n}{filaTorre}, con {Tablero[ft][x][0]} {Tablero[ft][x][1]}")
+            print(f"Posición: {n}{filaTorre}, con {Tablero[ft][x][0]}{Tablero[x][ct][1]}")
             break
         else:
             print(f"")
@@ -152,7 +152,7 @@ else:
 # Movimiento hacia la izquierda
 colIzquierdaInicial = ct - 1
 print("\nMovimientos hacia la Izquierda: ")
-#Verificar que no se salga del tablero
+#Verificar que no e salga del tablero
 if colIzquierdaInicial < 0:
     print("Invalido")
 else:
@@ -196,7 +196,7 @@ else:
                     q = 'g'
                 case 7:
                     q = 'h'
-            print(f"Posición: {q}{filaTorre}, con {Tablero[ft][x][0]} {Tablero[ft][x][1]}")
+            print(f"Posición: {q}{filaTorre}, con {Tablero[ft][x][0]}{Tablero[x][ct][1]}")
             break
         else:
             print(f"")
@@ -204,7 +204,7 @@ else:
 
 # Movimiento hacia arriba
 filSuperiorInicial = ft - 1
-print("\nMovimientos hacia Arriba: ")
+print("\n Movimientos hacia Arriba: ")
 #Verificar que no se salga del tablero
 if filSuperiorInicial <= -1:
     print("Invalido")
@@ -249,7 +249,7 @@ else:
                     o = 2
                 case 7:
                     o = 1
-            print(f"Posición: {colTorre}{o}, con {Tablero[x][ct][0]} {Tablero[x][ct][1]}")
+            print(f"Posición: {colTorre}{o}, con {Tablero[x][ct][0]}{Tablero[x][ct][1]}")
             break
         else:
             print(f"")
@@ -257,7 +257,7 @@ else:
 
 # Movimiento hacia abajo
 filInferiorInicial = ft + 1
-print(" \nMovimientos hacia Abajo: ")
+print("Movimientos hacia Abajo: ")
 #Verificar que no se salga del tablero
 if filInferiorInicial >= 8:
     print("Invalido")
@@ -302,9 +302,7 @@ else:
                     p = 2
                 case 7:
                     p = 1
-            print(f"Posición: {colTorre}{p}, con {Tablero[x][ct][0]} {Tablero[x][ct][1]} \n")
-
-
+            print(f"Posición: {colTorre}{p}, con {Tablero[x][ct][0]}{Tablero[x][ct][1]}")
             break
         else:
             print(f"")
